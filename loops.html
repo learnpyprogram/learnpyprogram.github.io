@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Python Notes - Datatypes and Operations</title>
+		<title>Python Notes - Loops</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -28,32 +28,146 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Datatypes and Operations</h1>
-									</header>
+										<h1>Loops</h1>
+                                    </header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+<p>Say we want to find the first 10 nonegative numbers. 
+    We could create a function that just prints all those numbers, ie. 
+    0, 1, 2, ..., 9, but that seems like a lot of work. 
+    And imagine if we wanted to print the first 100 numbers!
+    Fortunately, programming allows us to use loops to simplify processes like this.
+</p>
+<p>A for loop runs an action a specified number of times. 
+    An example is shown below:
+</p>
+<pre><code>def first_x_numbers(x):
+    # this function prints the first x nonnegative numbers
+    for i in range(x):
+        print(i)
+first_x_numbers(10)
+</code></pre>
+<p>Now, say we want to print the nonnegative numbers between x and y.
+    We need to specify y as another argument of the for loop.
+</p>
+<pre><code>def first_x_numbers(x, y):
+    # this function prints the nonnegative numbers between x and y
+    for i in range(x, y):
+        print(i)
+first_x_numbers(3, 10)
+</code></pre>
+<p>We see that now the first argument in the for loop, x, is where the loop begins; 
+    the second argument, y, is where the loop ends, but not including the y number. 
+    Note that this is equivalent to a range of [x, y), where y isn't included. 
+    So, the numbers that are printed are actually 3 through 9.
+</p>
+<p>Now suppose we only want every other number, eg. 3, 5, etc. 
+    We add yet another argument:
+</p>
+<pre><code>def first_x_numbers(x, y, z):
+    # this function prints the nonnegative numbers between x and y 
+    # and skipping every z numbers
+    for i in range(x, y, z):
+        print(i)
+first_x_numbers(3, 10, 2)
+</code></pre>
+<p>Now we see that this function prints 5 numbers: 3, 5, 7, and 9. 
+    The third argument that is passed into a for loop specifies how much we step by 
+    when looping through the range [x, y).
+</p>
+<p>What if we want these numbers, but in descending order instead? 
+    Let's think about this step by step:
+</p>
+<p>First, if we're going in descending order, then we start at number y. 
+    However, remember that y was not included in the previous loop--the loop ended printing number y-1.
+    So, we should actually start the loop at y-1.
+</p> 
+<p>Second, we should end the loop at number x. 
+    Following the same logic, if we want to actually include x, we should include it as x-1.
+</p>
+<p>Lastly, how much do we step by? 
+    Well, we want every zth number in descending order: hence, we should step by -z.
+</p>
+<pre><code>def reverse_x_numbers(x, y, z):
+    # this function prints the nonnegative numbers between x and y 
+    # and skipping every z numbers, in descending order
+    for i in range(x-1, y-1, -z):
+        print(i)
+first_x_numbers(3, 10, 2)
+</code></pre>
+<p>Let's do one more example: </p>
+<pre><code>def is_prime(n): # returns whether or not n is a prime number
+    if n < 2:
+        return True
+    for factor in range(2, n):
+        if (n % factor == 0): # if n is fully divisible by a factor...
+            return False      # then n isn't a prime number
+    return True
+for i in range(10):
+    if isPrime(i):
+        print(i)
+</code></pre>
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+<hr class="major" />
+<h2>Nested for loops</h2>
+<p>We can actually put loops inside of other loops.
+    This is expecially useful when we deal with variables that may have more than one dimension.
+    For instance, think about x and y values on a graph.
+</p>
+<p>Let's try and create a 2D-shape with nested for loops: </p>
+<pre><code>def rectangle(height, width, char):
+    # draw a rectangle with the char symbol having specified height and width
+    for row in range(height):
+        for col in range(width):
+            print(char, end="") # we specifiy end="" so as to not create new lines
+                                # along each row
+        print()                 # now that we're done printing an entire row, we can add a newline
+ rectangle(3, 5, "0")
+</code></pre>
+<p>Here's a challenge: try and draw a right triangle in the same format, with 
+    the hypotenuse going from the upper right corner down to the bottom left corner.
+</p>
+<pre><code>def triangle(height, char):
+    for row in range(height):
+        for col in range(row + 1): # add 1 because we want to start with 1 char
+                                   # in the first row and height+1 chars in the last row
+            print(char, end="")
+        print()
+triangle(3, "*")
+</code></pre>
+<p>Some of you might be confused by this. 
+    Note that "row", like "i" and "col" that you've seen in other loops on this webpage, 
+    are actually variables! That means you can use them in other parts of the function.
+</p>
 
-									<hr class="major" />
-
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
-									<hr class="major" />
-
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
-									<hr class="major" />
-
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+<hr class="major" />
+<h2>While loops</h2>
+<p>For loops are great, but some problems that require loops might not 
+    necessarily have "ranges" to loop through. For instance, if we want to find
+    the nth prime number, we don't have a specific range to look through--
+    we kind of just have to look at numbers one by one and determine if they're primes. 
+    For this, we can use the isPrime(n) function we wrote before.
+</p>
+<pre><code>def is_prime(n): # returns whether or not n is a prime number
+    if n < 2:
+        return True
+    for factor in range(2, n):
+        if (n % factor == 0): # if n is fully divisible by a factor...
+            return False      # then n isn't a prime number
+    return True
+def nth_prime(n):  # returns the nth prime number
+    found = 0
+    guess = 0
+    while(found <= n): 
+        if isPrime(guess):
+            found += 1
+        guess += 1
+    return guess
+print(nth_prime(3))
+</code></pre>
+<p>A while loop will keep running as long as what's between its brackets evaluates to True. 
+    Hence, in the above function, the loop will keep checking whether or not numbers are primes, 
+    and if they are, record the number of primes we've found, all the way until we've found the nth prime.
+</p>
 
 								</section>
 
