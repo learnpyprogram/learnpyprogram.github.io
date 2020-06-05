@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Python Notes - Datatypes and Operations</title>
+		<title>Python Notes - Datatypes & Operations</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -28,33 +28,159 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Datatypes and Operations</h1>
+										<h1>Datatypes & Operations</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+<p>Variables can store different datatypes, like integers, characters, and lists. 
+	Operations are how we can modify those datatypes, for instance dividing integers and concatenating characters or lists.
+</p>
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+<hr class="major" />
+<h2>Basic datatypes</h2>
+<table border="1">
+    <tr>
+		<th>Datatype</th>
+		<th>Examples</th>
+	</tr>
+	<tr>
+        <td>Constants</td>
+        <td>True, False, None</td>
+    </tr>
+    <tr>
+        <td>Integer</td>
+        <td>3, 9, 100000</td>
+    </tr>
+    <tr>
+        <td>Float</td>
+        <td>3.1415926, -2.34</td>
+    </tr>
+    <tr>
+        <td>Boolean</td>
+        <td>2<3, "c" in "ace"</td>
+	</tr>
+	<tr>
+        <td>Character</td>
+        <td>"4", "d", "P", "*"</td>
+	</tr>
+	<tr>
+        <td>String</td>
+        <td>"Bob the Builder!", "Jesse Chan"</td>
+	</tr>
+	<tr>
+        <td>List</td>
+        <td>[1, 2, 3], ["hi", 4, True]</td>
+	</tr>
+	<tr>
+        <td>Tuple</td>
+        <td>(1, 2, 3), ("hi", 4, True)</td>
+	</tr>
+</table>
+<p>In addition, Python has other datatypes like sets and dictionaries. 
+	These, along with strings, lists, and tuples, will be explored in later chapters. 
+	If you want to know what datatype a variable "x" is, you can look it up with type(x)
+</p>
 
-									<hr class="major" />
+<hr class="major" />
+<h2>Basic operators</h2>
+<table border="1">
+    <tr>
+		<th>Category</th>
+		<th>Operators</th>
+    </tr>
+    <tr>
+        <td>Arithmetic</td>
+        <td>+, -, *, /, //, **, %</td>
+    </tr>
+    <tr>
+        <td>Relational</td>
+        <td><, <=, >=, >, ==, !=</td>
+    </tr>
+    <tr>
+        <td>Logical</td>
+        <td>and, or, not</td>
+	</tr>
+	<tr>
+        <td>Bitwise</td>
+        <td><<, >>, &, |, ^, ~, &=, |=, ^=</td>
+	</tr>
+</table>
+<p>Note that we will not be using the last category (bitwise) of operators in this course. 
+	You might encounter them when learning other languages like C or Java, but they are used much less in Python.
+</p>
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+<hr class="major" />
+<h2>Arithmetic in Python</h2>
+<span class="image main"><img src="images/mathismath.jpg" alt="" /></span>
+<p>Arithmetic in Python is relatively straightforward, and adheres to most of 
+	the rules we're familiar with--for example, we can't divide anything by 0, 
+	and Python handles this by crashing. 
+	However, Python does introduce three operator representations 
+	you probably aren't familiar with. 
+</p>
+<p>First off is integer division, represented by the "//" symbol. 
+	Think about dividing with remainders--for instance, 17 divided by 15 can be 
+	represented as 1 with a remainder of 2. Integer division keeps only the 
+	non-remainder portion when dividing.
+</p>
+<p>On the other hand, the modulus operator "%" returns only the remainder portion.</p>
+<p>Lastly, "to the power of" is represented with "**". For instance, 
+	2**2 is equivalent to 2 to the power of 2, i.e. 4.
+</p>
+<p>Some examples:</p>
+<pre><code>print(23 // 10) # evaluates to 2
+print(23 % 10)  # evaluates to 3
+print(3 ** 2)   # evaluates to 9
+</code></pre>
+<p>A quick mathematical fact--a%b is equal to (a-(a//b)*b)! 
+	You can verify this on different numbers.
+</p>
+<p>Something else to take note of is operator precedence and associativity. 
+	Say you run 3+4*5/6. Which operation is run first? Addition? Division? 
+	It turns out that, as aforementioned, Python adheres to normal mathematical rules:
+</p>
+<pre><code>print(3 + 4 *5) 			# evaluates to 23, not 60
+					# unsurprisingly, *, /, //, and % have higher precedence than
+					# + or -, and will be run first
+print((3 + 4) * 5) 			# now this evaluates to 60--what's in brackets will be run first
+print(3 ** 4 / 2) 			# the "**" operator has the highest precedence and will always be handled first
+print(5 - 4 - 1) 			# evaluates to 0, not 2, because we run from left-to-right
+print((5 - (4 - 1))			# now this evaluates to 2
+print(4 ** 3 ** 2)			# evaluates to 262144, not 4096. ** is a special case that runs from right-to-left
+</code></pre>
 
-									<hr class="major" />
+<hr class="major" />
+<h2>Floating point approximation</h2>
+<p>Python uses something called floating point approximation to approximate 
+	the values of fractions. The issue with this is that the approximations
+	are not going to be 100% matching. Consider the fraction 1/3. It can be 
+	represented as 0.33333333 and onwards--an infinitely repeating decimal. 
+	Computer programs have limited memory, so we can't actually represent 
+	anything in infinite space.
+</p>
+<p>Let's try an example:</p>
+<pre><code>print(float(1 / 10))
+# at first glance everything seems alright--1/10 is equal to 0.1 after all
+print(3 * float(1 / 10))
+# but now we see that 3*1/10 is not equal to 3/10, or 0.3
+# this is because the approximation includes many decimal places
+# after what was displayed in the first print statement
+</code></pre>
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
-									<hr class="major" />
-
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-
+<hr class="major" />
+<h2>Short circuit evaluation</h2>
+<p>When we deal with logical operators, Python will evaluate them sequentially from left-to-right. 
+	So, for instance, if we have a statement like "True or False", Python will read "True" first, 
+	and since it's an or statement, it will immediately evauate to True without even looking at the 
+	"False" part.
+</p>
+<pre><code>def yea(): return True
+def nah(): return False
+def crash(): return 1/0  # this crashes
+print(no() and crash())  # prints False without even looking at crash()
+print(crash() and no())  # this crashes
+print(yes() and crash()) # this crashes
+print(yes() or crash())  # prints True without even looking at crash()
+</code></pre>
 								</section>
 
 						</div>
