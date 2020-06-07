@@ -2213,9 +2213,9 @@ button,
     display: block;
     font-size: 0.9em;
     padding: 0.625em 0; }
-    #menu ul a:hover, #menu ul span:hover {
+    #menu ul a:hover {
       color: #f56a6a; }
-    #menu ul a.opener, #menu ul span.opener {
+    #menu ul a.opener {
       -moz-transition: color 0.2s ease-in-out;
       -webkit-transition: color 0.2s ease-in-out;
       -ms-transition: color 0.2s ease-in-out;
@@ -2223,7 +2223,7 @@ button,
       text-decoration: none;
       -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
       position: relative; }
-      #menu ul a.opener:before, #menu ul span.opener:before {
+      #menu ul a.opener:before {
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
         display: inline-block;
@@ -2234,7 +2234,7 @@ button,
         text-transform: none !important;
         font-family: 'Font Awesome 5 Free';
         font-weight: 900; }
-      #menu ul a.opener:before, #menu ul span.opener:before {
+      #menu ul a.opener:before {
         -moz-transition: color 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;
         -webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
         -ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
@@ -2243,11 +2243,11 @@ button,
         content: '\f078';
         position: absolute;
         right: 0; }
-      #menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
+      #menu ul a.opener:hover:before {
         color: #f56a6a; }
-      #menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
+      #menu ul a.opener.active + ul {
         display: block; }
-      #menu ul a.opener.active:before, #menu ul span.opener.active:before {
+      #menu ul a.opener.active:before {
         -moz-transform: rotate(-180deg);
         -webkit-transform: rotate(-180deg);
         -ms-transform: rotate(-180deg);

@@ -28,48 +28,248 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Datatypes and Operations</h1>
+										<h1>Strings</h1>
 									</header>
 
 									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
 
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
+									<p>A <b>String</b> is one of the datatypes introduced in the chapter <b>Datatypes</b>. In this chapter, we will expand on that, introducing further <u>operations</u>, and <u>built-in methods</u> for Strings</p>
+									<p>
+										Strings is an iterable object, meaning that you can use <b>Loops</b> on it (other iterable objects include tuple, list, dictionary etc). 
+										A string allows you to iterate over each one of its characters, 
+									</p>
 									<hr class="major" />
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Creating a string</h2>
+									
+									<p>To create a string in Python, we use either 'single' or "double" quotes. </p>
+<pre><code>print('single')
+print("double")
 
+print('''This is a string
+that can span
+multiple lines
+using single
+quotes
+''')
+
+print("""This is a string
+that can span
+multiple lines 
+using double
+quotes
+""")</code></pre>
+									<p>
+										So why do we want both single and double quotes? It allows us to use quotes within a string as in the following:
+									</p>
+
+<pre><code># this will successfully print: This is a string with "quotes" inside
+print('This is a string with "quotes" inside')
+
+# this code would give an error, because the string would be seperated into
+# "This is a string with " and " inside", with the word quotes not being a string.
+print("This is a string with "quotes" inside")
+</code></pre>
 									<hr class="major" />
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Escape Sequences</h2>
+									<p>Escape Sequences are <b>single characters</b> that are treated as a special character by python. 
+										To make an escape sequence, use the backslash ("\") in addition to another character</p>.
 
+									<p>The most popular escape character is the newline ("\n"). Putting this character anywhere in the string is similar to hitting enter or return on the keyboard.
+										Remember, even though "\n" is typed with two characters, it is recognized by python as one character.
+									</p>
+	
+<pre><code># You can use newline in single-line strings.
+print("This is the first line.\nThis is the second line.")
+
+# Using multi-line strings automatically adds newlines for you
+print("""This is the first line.
+	This is the second line.""")
+
+multi_line = """This is the first line.
+This is the second line."""
+single_line = "This is the first line.\nThis is the second line."
+
+# This would evaluate to true
+multi_line == single_line
+
+# The length of this is 5
+len("ab\ncd") == 5
+</code></pre>
+
+									<p>Other useful escape sequences include</p>
+<pre><code>print("There would be a tab here: \tAfter the tab")
+
+# You can also escape a backslash itself
+# This will print: This allows a backslash (\) to be printed
+print("This allows a backslash (\\) to be printed")
+
+# Remember this quote that errored before?
+print("This is a string with "quotes" inside")
+
+# To fix this, we can escape the inner quotes, telling python to treat
+# them as a regular string character
+print("This is a string with \"quotes\" inside")
+</code></pre>
 									<hr class="major" />
 
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2>String Operations</h2>
+									<h3>Addition and Multiplication</h3>
+									<p>You can use addition to concatenate two strings together. You can also use multiplication to get multiple copies of the same string</p>
+<pre><code>#the following prints: string 1 and string 2
+print("string 1" + " and " + "string 2")
 
+#this prints: hahahahaha
+print("ha" * 5)
+</code></pre>
+									<h3>in Operation</h3>
+									<p>The in operation lets you check if a string is in another string. Using the operation on two strings would return a boolean value True/False.</p>
+<pre><code>#evaluates to True
+print("hi" in "hiya")
+
+#evaluates to False
+print("bye" in "hi")
+</code></pre>	
+									<h3>Indexing and Slicing</h3>
+									<p>Indexing allows you to get a character from the string. Remember that the count for indexing starts from 0 instead of 1!</p>
+<pre><code>jerry = "Jerry\nLi"
+jerry[0] == "J"
+jerry[1] == "e"
+jerry[2] == "r"
+jerry[3] == "r"
+jerry[4] == "y"
+jerry[5] == "\n" #Remember, escape sequences count as one character
+jerry[6] == "L"
+jerry[7] == "i"
+
+#This would cause an error in the program
+jerry[8] 
+</code></pre>			
+									<p>You can also do negative indexing, which is indexing but you start the count from the back. In this case, the count for indexing starts from -1. Why not 0? This is because we already used the index 0 for positive indexing.</p>
+<pre><code>jerry = "Jerry\nLi"
+jerry[-1] == "i"
+jerry[-2] == "L"
+jerry[-3] == "\n"
+jerry[-4] == "y"
+jerry[-5] == "r"
+jerry[-6] == "r"
+jerry[-7] == "e"
+jerry[-8] == "J"
+</code></pre>
+									<p>Slicing is like getting a range of indexes from a certain start and end value. Given a start and end value for the slice, the start value is inclusive and the end value is exclusive.
+										This means that when getting the range of indexes, include index start but exclude index end.
+									</p>
+<pre><code>jerry = "Jerry\nLi"
+jerry[0:2] == "Je" #Note that jerry[0] == "J" is included by jerry[2] == "r" is excluded
+jerry[:6] == "Jerry\n"
+jerry[6:] == "Li"
+jerry[:] == "Jerry\nLi"
+</code></pre>		
+									<hr class="major" />
+									<h2>Built-in Methods</h2>
+									<p>
+										<h3>str()</h3>
+										<p>Converts another datatype into a string</p>
+<pre><code>str(5) == "5"
+</code></pre>
+										<h3>len()</h3>
+										<p>Given a string, gets the length of the string</p>
+<pre><code>len("Jerry Li") == 8
+
+# Remember that \n is considered one character
+len("ab\ncd") == 5
+</code></pre>								
+										<h3>chr() and ord()</h3>
+										<p>Each character in a string has an associated ASCII value, an integer between 0 and 127 that represents the character. 
+											Here is a table showing characters and their respective ASCII value. 
+										</p>	
+										<span class="image fit"><img src="images/asciitable.jpg" alt="" /></span>
+										<p>Both chr() and ord() are operations for <u>one character</u>. chr() gives you the character from the ASCII value, while ord() gives you the ASCII value from the character</p>
+
+<pre><code>ord("A") == 65
+chr(65) == "A"
+
+# You can also do arithmetic on the ASCII value
+chr(ord("A") + 2) == "C"
+</code></pre>
+										<h3>.capitalize(), .lower(), .upper()</h3>
+										<p>These three operations adjusts the capitalization of the given string</p>
+<pre><code># This will print: Jerry
+print("jerry".capitalize())
+
+# This prints: JERRY LI
+print("jErRy Li".upper())
+
+# This prints: jerry li
+print("jErRy Li".lower())
+</code></pre>
+										<h3>.isalnum(), .isalpha(), .isdigit(), .isspace()</h3>
+										<p>These methods check whether the contents of the strings are characters in the alphabet ("A", "a", "b" etc.), digits ("0", "1", "2", etc.), or whitespace ("\t", "\n", " " etc.)</p>
+<pre><code># .isalnum() returns True if the string has only characters in the alphabet or digits and False otherwise. 
+"AABB".isalnum() #True
+"aaBB123".isalnum() #True
+"aaBB 123".isalnum() #False, because there is a space
+
+# .isalpha() returns True if the string has only characters in the alphabet and False otherwise
+"AABB".isalpha() #True
+"aaBBaaBB".isalpha() #True
+"A B".isalpha() #False, due to whitespace
+"1AB".isalpha() #False, due to digit "1"
+
+# .isdigit() returns True if the string has only digits and False otherwise
+"123".isdigit() #True
+"A123".isdigit() #False
+"1 2 3".isdigit() #False
+
+# .isspace() returns True if the string has only whitespace ('\t', ' ', '\n' etc.) and False otherwise
+"\t".isspace() #True
+"Hi\tBye".isspace() #False
+"\t\t\t\t\t\n \n \n \t".isspace() #True
+</code></pre>
+										<h3>.split(), .splitlines()</h3>
+										<p>.split() and .splitlines() are both methods to split a string by what is called a delimiter. A delimiter is a character that indicates where to split a string by.
+										.splitlines() is the special case of .split("\n"). If you call .split() without passing in a parameter for the delimiter, split would just automatically split on any whitespace ('\t', '\n', ' ').
+										The return value of both methods is a List of split strings, which you will learn in the next chapter.
+										</p>
+
+<pre><code># .split(",") would split by the comma
+print("Jerry,Li".split(",")) #prints: ["Jerry", "Li"]
+
+#.splitlines() would split by newline '\n'
+print("Jerry\nLi".splitlines()) #prints: ["Jerry", "Li"]
+
+#.split() would split by whitespace, which includes space, newlines, tabs etc.
+print("Hi\tBye\nAnother line".split()) #prints: ["Hi", "Bye", "Another", "line"]
+</code></pre>
+										<h3>f Strings</h3>
+										<p>F strings is a very powerful new feature in Python 3. It allows for quick string formatting.</p>
+<pre><code># Previously, to include a integer and string variable you will have to specify what the type is as follow
+name = "Harry Potter"
+book_id = 7
+#Note that %s indicates a string and %d indicates an integer
+print("The book %s has id %d" % (name, book_id)) 
+
+# Now, the f-string allows us to do the previous much easier
+name = "Harry Potter"
+book_id = 7
+# This prints: "The book Harry Potter has id 7"
+# With f-strings, you will not need to indicate which type name or book_id is.
+print(f"The book {name} has id {book_id}) #Note that there is an f before the string
+</code></pre>
+										<h3>Other Methods</h3>
+										<p>There are a lot of methods for strings, and here we have complied some that are used the most. To learn more about the different methods,
+											you can google "python string built-in methods", which would give you the entire list or documentation of python string methods. There is no need to 
+											memorize all the methods, usually with practice you will figure out which ones are useful and which ones are not, and you will automatically remember the 
+											ones you have used most.
+										</p>
 								</section>
-
 						</div>
 					</div>
 
 				<!-- Sidebar -->
                 <div id="sidebar">
 						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -102,9 +302,9 @@
 									<p>Contact us with questions through wechat or emails!</p>
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="#">jessec1@andrew.cmu.edu</a></li>
-										<li class="icon solid fa-weixin">jzchan34</li>
+										<li class="icon solid fa-weixin">WeChatId: jzchan34</li>
 										<li class="icon solid fa-envelope"><a href="#">jerryl@andrew.cmu.edu</a></li>
-										<li class="icon solid fa-weixin">traumatized something</li>
+										<li class="icon solid fa-weixin">WeChatId: traumatizedpanda</li>
 									</ul>
 								</section>
 						</div>

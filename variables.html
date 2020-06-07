@@ -31,8 +31,8 @@
 										<h1>Variables & Functions</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-
+									
+									<hr class="major" />
 									<p>A variable is a named value that references or stores a piece of data.
 										Variables can be assigned by using an “=” sign, as shown below:</p>
 <pre><code>x=5
@@ -110,11 +110,16 @@ print(wow()) # this shows x+y, which is 8
 print(x) 
 print(y)
 </code></pre>
-<p>A global variable is the complete opposite--it is declared outside functions, and can be used anywhere.</p>
-<pre><code>z = 1
+
+<span class="image fit"><img src="images/variables.png" alt="" /></span>
+
+<p>A global variable is the complete opposite--it is declared outside functions, and can be used anywhere. Usually, it is good style to not use global variables, because 
+	it would "pollute the global namespace", making it difficult to keep track of the scope of variables.
+</p>
+<pre><code>z = 1 # global variable
 def wow():
-	x = 5
-	y = 3
+	x = 5 # local variable
+	y = 3 # local variable
 	return x + y + z
 print(wow()) # this shows x+y+z, which is 9
 # this is fine, since z can be used outside a function!
@@ -144,13 +149,6 @@ print(complex_thing(1, 2, 3)) # this evaluates to (1+2)*3, which is 9
                 <div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
@@ -159,9 +157,9 @@ print(complex_thing(1, 2, 3)) # this evaluates to (1+2)*3, which is 9
 									<ul>
                                         <li><a href="index.html">Homepage</a></li>
                                         <li><a href="installation.html">Installation</a></li>
-                                        <li><a href="variables.html">Variables</a></li>
+                                        <li><a href="variables.html">Functions and Variables</a></li>
 										<li><a href="datatypes.html">Datatypes</a></li>
-                                        <li><a href="functions.html">Functions</a></li>
+                                        <!-- <li><a href="functions.html">Functions</a></li>
                                         <li><a href="conditionals.html">Conditionals</a></li>
                                         <li><a href="strings.html">Strings</a></li>
                                         <li><a href="loops.html">Loops</a></li>
@@ -170,8 +168,17 @@ print(complex_thing(1, 2, 3)) # this evaluates to (1+2)*3, which is 9
                                         <li><a href="oopy.html">Object Oriented Programming</a></li>
                                         <li><a href="graphics.html">Graphics</a></li>
                                         <li><a href="minimax.html">AI - minimax</a></li>
-                                        <li><a href="abpruning.html">AI - ab pruning</a></li>
-									</ul>
+										<li><a href="abpruning.html">AI - ab pruning</a></li> -->
+										<li><span>Conditionals</span></li>
+										<li><span>Strings</span></li>
+										<li><span>Loops</span></li>
+										<li><span>Lists</span></li>
+										<li><span>Dictionary</span></li>
+										<li><span>Object Oriented Programming</span></li>
+										<li><span>Graphics</span></li>
+										<li><span>AI - minimax</span></li>
+										<li><span>AI - ab pruning</span></li>
+									</ul> 
 								</nav>
 
 							<!-- Section -->
@@ -182,9 +189,9 @@ print(complex_thing(1, 2, 3)) # this evaluates to (1+2)*3, which is 9
 									<p>Contact us with questions through wechat or emails!</p>
 									<ul class="contact">
 										<li class="icon solid fa-envelope"><a href="#">jessec1@andrew.cmu.edu</a></li>
-										<li class="icon solid fa-weixin">jzchan34</li>
+										<li class="icon solid fa-weixin">WeChatId: jzchan34</li>
 										<li class="icon solid fa-envelope"><a href="#">jerryl@andrew.cmu.edu</a></li>
-										<li class="icon solid fa-weixin">traumatized something</li>
+										<li class="icon solid fa-weixin">WeChatId: traumatizedpanda</li>
 									</ul>
 								</section>
 						</div>
