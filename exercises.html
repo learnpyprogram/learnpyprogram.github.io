@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Python Notes - Conditionals</title>
+		<title>Python Notes - Exercises</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -31,56 +31,84 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Conditionals</h1>
+										<h1>Exercises</h1>
 									</header>
 
-<p>Conditionals are used to identify and execute actions based on if-else cases.</p>
-
-<hr class="major" />
-
-<h2>If-else statements</h2>
-<p>If, elif, and else statements are used with Boolean values to direct programs. Example: </p>
-
-<form>
-<textarea id="code1">def number_compare(x, y): # returns -1 if x<y, 0 if x==y, and 1 if x>y
-    if x < y:
-        return -1
-    elif x==y:
-        return 0
-    else:
-        return 1
-print(number_compare(1, 3))
-print(number_compare(5, 2))
-print(number_compare(4, 4))</textarea>
-<button onclick="runboi('code1', 'output1')" type="button">Run</button>
-</form>
-<pre id="output1"></pre>
-<p>Note that an elif statement can be read as "else if", which means that if the previous if or elif statement evaluates to False, we'll evaluate the current elif statement next.</p>
-<p>If statements must always be used in the if-elif-else order, and the program will evaluate each of these statements in that order.
-    However, we don't always need to include an elif or else statement--we can write if-elif or if-else statements. 
-    This depends on what we want the function to actually do. 
+<p>Let's try integrating what you've learned so far and implementing some fun programs! 
+	Before you try these exercises, make sure you've read through all the specified chapters. 
+	Don't forget to try implementing them yourselves before reading our solutions!
 </p>
 
 <hr class="major" />
-<h2>If-else expression</h2>
-<p>We can write shorter code by using if-else expressions to directly return what we want.</p>
+<h2>Exercise 1: Trump's Tweets</h2>
+<p><b>Prerequisites:</b> variables, functions, datatypes, operations, and conditionals.</p>
+<p>US President Donald Trump is known for, among other things, publishing hilarious messages on Twitter and having great hair. 
+	In this exercise, we want to write a function that allows the user to input a question and randomly returns a Trump tweet in response. 
+	To do so, we'll be introducing two new functions: <code>input()</code> and the <code>random</code> library.
+</p>
+<p><code>input()</code> is used in Python to obtain a response from the user through the command line. 
+	What we put between the brackets gets printed to the console, and what we type afterwards will be read into Python. 
+	Run the following code and test it out! Enter your name into the dialogue box that appears in your browser.
+</p>
 
 <form>
-<textarea id="code2">def is_even(n): # returns whether or not n is an even number
-    return True if n % 2 == 0 else False
-print(is_even(3))
-print(is_even(8))</textarea>
+<textarea id="code1">def say_hi():
+	yourname = input("Please tell me your name!\n")
+	print("Hi " + yourname +"!")
+say_hi()</textarea>
+<button onclick="runboi('code1', 'output1')" type="button">Run</button>
+</form>
+<pre id="output1"></pre>
+
+<p>The <code>random</code> library in Python is used to generate random values. 
+	This is very useful in game design and probability tests. 
+	For our purposes, it will be useful in imitating how President Trump acts online, i.e. with seemingly no predictability whatsoever. 
+	To use it, you'll have to include the line <code>import random</code> at the top of your code. 
+	This allows us to access the library. 
+	Below is a function that randomly prints a number between 1 and 10. 
+	Run it a few times to see that it does indeed randomly print a number!
+</p>
+
+<form>
+<textarea id="code2">import random
+def generate():
+	num = random.randint(1, 10) # note that this range is inclusive of both 1 and 10
+	print(num)
+generate()</textarea>
 <button onclick="runboi('code2', 'output2')" type="button">Run</button>
 </form>
 <pre id="output2"></pre>
 
-<p>Of course, in the above example, we could also just return the Boolean value of the n%2==0 expression:</p>
+<p>Armed with these two functions, we are now ready to complete this exercise. 
+	First, let's write the function <code>tweet()</code> that does not take in any arguments and simply randomly returns a tweet. 
+	You can search online to find some of Trump's famous tweets--copy 5 of them and try completing this function!
+</p>
 
+<p>Next, write the function <code>provoke_the_orange()</code> that first prints out a short description of what this exercise is about, 
+	then asks the user to write a question for President Trump, and lastly calls our <code>tweet()</code> function to generate a response.
+</p>
+<p>Take some time to think about how you want to approach this before moving on, and remember that you can test your code in VS Code.</p>
+<br></br><br></br><br></br><br></br>
+<h3>Solution:</h3>
 <form>
-<textarea id="code3">def is_even(n): # returns whether or not n is an even number
-	return n % 2 == 0
-print(is_even(3))
-print(is_even(8))</textarea>
+<textarea id="code3">import random
+def tweet():
+	option = random.randint(1, 5)
+	if (option == 0): return "Obama is, without question, the WORST EVER president!"
+	elif (option == 1): return "The beginning of the end was the horrible Iran deal, and now this (U.N.)!"
+	elif (option == 2): return "Sorry losers and haters, but my I.Q. is one of the highest -and you all know it!"
+	elif (option == 3): return "The concept of global warming was created by and for the Chinese in order to make U.S manufacturing non-competitive."
+	elif (option == 4): return "I won the popular vote if you deduct the millions of people who voted illegally."
+	else: return "disinfectant...by injection..."
+
+def poke_the_orange():
+	print('Trump Quote Generator')
+	print('-----------------')
+	print(input('Think of a random question: '))
+	print('-----------------')
+	print(tweet())
+
+poke_the_orange()</textarea>
 <button onclick="runboi('code3', 'output3')" type="button">Run</button>
 </form>
 <pre id="output3"></pre>
