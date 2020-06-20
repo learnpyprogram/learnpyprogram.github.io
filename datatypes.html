@@ -155,6 +155,9 @@ print(-10 % 3) #Evaluates to -10 - (3 * -4) => -10 - (-12) => 2</textarea>
 </form>
 <pre id="outmod"></pre>
 
+<p>A quick mathematical fact--a%b is equal to (a-(a//b)*b)! 
+	You can verify this on different numbers.
+</p>
 		
 <h3>3. Power (**)</h3>
 <p>Lastly, "to the power of" is represented with "**". For instance, 
@@ -167,9 +170,19 @@ print(-10 % 3) #Evaluates to -10 - (3 * -4) => -10 - (-12) => 2</textarea>
 </form>
 <pre id="output1"></pre>
 
-<p>A quick mathematical fact--a%b is equal to (a-(a//b)*b)! 
-	You can verify this on different numbers.
+<h3>4. int() and float()</h3>
+<p>To convert a float to an int, use the int() function. To convert an int to a float, use the float() function.
+	For the int() function, we convert the float to an int by simply removing the decimal points. This is known as rounding
+	to 0, instead of rounding down like integer division or modulus.
 </p>
+<form>
+<textarea rows=3 id="intfloat">print(int(5.5)) # Gives 5
+print(int(-5.5)) # Gives -5, note it doesn't round down to -6
+print(float(5)) # Gives 5.0, note the .0, which differentiates a float from an int</textarea>
+<button onclick="runboi('intfloat', 'outif')" type="button">Run</button>
+</form>
+<pre id="outif"></pre>
+
 <p>Something else to take note of is operator precedence and associativity. 
 	Say you run 3+4*5/6. Which operation is run first? Addition? Division? 
 	It turns out that, as aforementioned, Python adheres to normal mathematical rules:
