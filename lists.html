@@ -10,6 +10,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="assets/js/skulpt.min.js" type="text/javascript"></script>
+		<script src="assets/js/skulpt-stdlib.js" type="text/javascript"></script>
+		<script src="assets/js/coderunner.js" type="text/javascript"></script>
 	</head>
 	<body class="is-preload">
 
@@ -39,12 +42,17 @@
 									</p>
 									<p>Here are how to initialize a list, using square brackets []</p>
 
-<pre><code># An Empty List 
+<form>
+	<textarea rows=4 id="code1"># An Empty List 
 a = []
-#a[0] would crash because there are no elements
-</code></pre>
+print(a)
+print(a[0]) #a[0] would crash because there are no elements</textarea>
+	<button onclick="runboi('code1', 'output1')" type="button">Run</button>
+	<pre id="output1"></pre>
+</form>
 
-<pre><code># A Singleton List
+<form>
+	<textarea rows=9 id="code2"># A Singleton List
 a = ["hello"]
 b = [5]
 c = [True]
@@ -52,51 +60,69 @@ c = [True]
 a[0] == "hello"
 b[0] == 5
 c[0] == True
-</code></pre>
+print(a,b,c)</textarea>
+	<button onclick="runboi('code2', 'output2')" type="button">Run</button>
+	<pre id="output2"></pre>
+</form>
 
-<pre><code># Multiple Element List
+<form>
+	<textarea rows=7 id="code3"># Multiple Element List
 #Note that you can include different datatypes in the same list
 a = ["hello", 5, True] 
-
+print(a)
 a[0] == "hello"
 a[1] == 5
-a[2] == True
-</code></pre>
+a[2] == True</textarea>
+	<button onclick="runboi('code3', 'output3')" type="button">Run</button>
+	<pre id="output3"></pre>
+</form>
 
-<pre><code># Creating lists of variable length
+						<p>Creating Lists of Variable Length</p>
 
-a = [None] * 4
+<form>
+	<textarea rows=10 id="code4">a = [None] * 4
 # a would be [None, None, None, None]
 
-b = list(range(8)) #note range itself is not a list
+b = list(range(8)) #note range itself is not a list, but it's similar
 # b would be [0, 1, 2, 3, 4, 5, 6, 7]
+print(b)
 
 c = list("hello")
 # c would be ["h", "e", "l", "l","o"]
-</code></pre>
+print(c)</textarea>
+	<button onclick="runboi('code4', 'output4')" type="button">Run</button>
+	<pre id="output4"></pre>
+</form>
+
 
 					<p>List comprehension is a powerful tool in creating lists of variable length.
 						You will do this with a for loop inside []
 					</p>
-<pre><code>a = ["hi" for i in range(3)]
+
+<form>
+	<textarea rows=12 id="code5">a = ["hi" for i in range(3)]
 # a would be ["hi", "hi", "hi"]
 
 b = [[None] * 3 for i in range(3)]
-
+print(b)
 # b would be [[None, None, None],
-		[None, None, None],
-		[None, None, None]]
+#			  [None, None, None],
+#			  [None, None, None]]
 
 # b is what is known as a 2D list
 
-# note how this can be related to a chess board (hint hint...)
-</code></pre>
+# note how this can be related to a chess board (hint hint...)</textarea>
+	<button onclick="runboi('code5', 'output5')" type="button">Run</button>
+	<pre id="output5"></pre>
+</form>
+
 									<hr class="major" />
 									<h2>Indexing and Slicing</h2>
 									<p>Indexing and Slicing in lists is similar to strings.
 										Indexing is when you access one element of the list. Slicing is when you access a range of elements between a start and end index.</p>
 
-<pre><code>a = ["Hello", True, 5]
+<form>
+	<textarea rows=9 id="code6">a = ["Hello", True, 5]
 a[0] == "Hello"
 a[1] == True
 a[2] == 5
@@ -104,43 +130,60 @@ a[2] == 5
 #Note the first index is inclusive and the last index is exclusive
 a[0:1] == ["Hello"]
 a[1:3] == [True, 5]
-</code></pre>
+print(a[0:1], a[1:3])</textarea>
+<button onclick="runboi('code6', 'output6')" type="button">Run</button>
+<pre id="output6"></pre>
+</form>
 									<p>One special property of lists is that it is mutable. Note that in the String chapter we said that strings are immutable, meaning that you can index and
 										read from the string but you cannot change the character at the index directly. In Lists you are able to change the element at the index directly.
 									</p>
-<pre><code>a = ["Hello", True, 5]
+
+<form>
+	<textarea rows=8 id="code7">a = ["Hello", True, 5]
 
 #This writes a new element at index 0 (Note how this is similar to assigning a variable)
 a[0] = "Bye"
 print(a) # a is now ["Bye", True, 5]
 
 a[1] = False
-print(a) # a is now ["Bye", False, 5]
-</code></pre>
+print(a) # a is now ["Bye", False, 5]</textarea>
+<button onclick="runboi('code7', 'output7')" type="button">Run</button>
+<pre id="output7"></pre>
+</form>
 
 									<hr class="major" />
 
 									<h2>Operations</h2>
 									<p>Here are some of the most common operations on a list, which are <b>len()</b>, <b>max()</b>, <b>min()</b> and <b>sum()</b></p>
 									<h3>Basic Operation</h3>
-<pre><code>a = ["hello", 5, True]
+
+<form>
+	<textarea rows=7 id="code8">a = ["hello", 5, True]
 len(a) == 3
 
 b = [2, 4, 5, -4]
 max(b) == 5
 min(b) == -4
-sum(b) == 7
-</code></pre>
+sum(b) == 7</textarea>
+<button onclick="runboi('code8', 'output8')" type="button">Run</button>
+<pre id="output8"></pre>
+</form>
+
 									<h3>Finding Operation</h3>
 									<p>These operation allow you to check for where an element is in a list or not. The two main operations are <b>in</b> and <b>not in</b></p>
-<pre><code>a = ["hello", 5, True]
 
-"hello" in a == True #note how the expression evaluates to a boolean
-8 in a == False
+<form>
+	<textarea rows=7 id="code9">a = ["hello", 5, True]
 
-"hello" not in a == False
-8 not in a == True
-</code></pre>
+print("hello" in a) #True #note how the expression evaluates to a boolean
+print(8 in a) #False
+
+print("hello" not in a) #False
+print(8 not in a) #True</textarea>
+<button onclick="runboi('code9', 'output9')" type="button">Run</button>
+<pre id="output9"></pre>
+</form>
+
 									<h3>Adding Operation</h3>
 									<p>These operations allow you to add to a list, which also allows you to build variable length list</p>
 									<p>But first, lets discuss the difference between <b>destructive</b> and <b>non-destructive</b> operations. <b>Destructive</b> operations on a list change
@@ -148,31 +191,48 @@ sum(b) == 7
 										For example, assigning a value like a[0] = "hello" is destructive because it changes a. We will see further examples below.
 									</p>
 									<p>This first operation is called <b>.append()</b>, which adds an element to the end of the list <b>destructively</b></p>
-<pre><code>a = ["This", "is", "a"]
+
+<form>
+<textarea rows=6 id="code10">a = ["This", "is", "a"]
 a.append("list") #Note how the appending element is a string and not a list
 print(a) # a would be ["This", "is", "a", "list"]
 
 a.append(["list"]) #if we append a list we would get a 2D list
-print(a) # a would be ["This", "is", "a", "list", ["list"]]
-</code></pre>
+print(a) # a would be ["This", "is", "a", "list", ["list"]]</textarea>
+<button onclick="runboi('code10', 'output10')" type="button">Run</button>
+<pre id="output10"></pre>
+</form>
+
 									<p>These two operations (<b>.extend()</b> and <b>+=</b>) are similar and both extends a list with another list <b>destructively</b>. Note that extending a singleton would have the same effect as append</p>
-<pre><code>a = ["This", "is"]
+<form>
+<textarea rows=6 id="code11">a = ["This", "is"]
 a += ["a", "list"]
 print(a) # a would be ["This", "is", "a", "list"]
 
 a.extend(["a", "list"])
-print(a) # a would be ["This", "is", "a", "list", "a", "list"]
-</code></pre>
+print(a) # a would be ["This", "is", "a", "list", "a", "list"]</textarea>
+<button onclick="runboi('code11', 'output11')" type="button">Run</button>
+</form>
+<pre id="output11"></pre>
+
+
 									<p>Note how the above two operations are <b>destructive</b> as they change the original list a. Now I will introduce a <b>non-destructive</b> version of extend/+=</p>
-<pre><code>a = ["This", "is"]
+<form>
+<textarea rows=4 id="code12">a = ["This", "is"]
 b = a + ["a", "list"]
 print(a) #note how a is unchanged, it is still ["This", "is"]
-print(b) # b should print ["This", "is", "a", "list"]
-</code></pre>
+print(b) # b should print ["This", "is", "a", "list"]</textarea>
+<button onclick="runboi('code12', 'output12')" type="button">Run</button>
+</form>
+<pre id="output12"></pre>
+
+
 									<h3>Deleting Operations</h3>
 									<p>Here are the <b>destructive</b> deletion operations <b>.remove()</b> and <b>.pop()</b>. The <b>.remove()</b> method takes in an element and removes the first occurance of the element in the list. The <b>.pop()</b> method takes in an index and delete the element at that index in the list.
 									<b>.remove()</b> doesn't have a return value, but <b>.pop()</b> returns the value it popped</p>
-<pre><code>calendar = ["event 1", "event 2", "event 3", "event 2"]
+
+<form>
+<textarea rows=15 id="code13">calendar = ["event 1", "event 2", "event 3", "event 2"]
 calendar.remove("event 2")
 print(calendar) #calendar would print ["event 1", "event 3", "event 2"]
 calendar.remove("event 2")
@@ -186,8 +246,12 @@ print(first) # prints "event 1"
 # note that when you don't give a value to .pop() it pops the last element in the list
 third = calendar_2.pop()
 print(calendar_2) #calendar 2 would print ["event 2"]
-print(third) # prints "event 3"
-</code></pre>
+print(third) # prints "event 3"</textarea>
+<button onclick="runboi('code13', 'output13')" type="button">Run</button>
+</form>
+<pre id="output13"></pre>
+
+
 
 
 								</section>

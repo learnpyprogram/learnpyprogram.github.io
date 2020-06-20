@@ -42,7 +42,7 @@
 <p>If, elif, and else statements are used with Boolean values to direct programs. Example: </p>
 
 <form>
-<textarea id="code1">def number_compare(x, y): # returns -1 if x<y, 0 if x==y, and 1 if x>y
+<textarea rows=10 id="code1">def number_compare(x, y): # returns -1 if x<y, 0 if x==y, and 1 if x>y
     if x < y:
         return -1
     elif x==y:
@@ -66,7 +66,7 @@ print(number_compare(4, 4))</textarea>
 <p>We can write shorter code by using if-else expressions to directly return what we want.</p>
 
 <form>
-<textarea id="code2">def is_even(n): # returns whether or not n is an even number
+<textarea rows=4 id="code2">def is_even(n): # returns whether or not n is an even number
     return True if n % 2 == 0 else False
 print(is_even(3))
 print(is_even(8))</textarea>
@@ -77,7 +77,7 @@ print(is_even(8))</textarea>
 <p>Of course, in the above example, we could also just return the Boolean value of the n%2==0 expression:</p>
 
 <form>
-<textarea id="code3">def is_even(n): # returns whether or not n is an even number
+<textarea rows=4 id="code3">def is_even(n): # returns whether or not n is an even number
 	return n % 2 == 0
 print(is_even(3))
 print(is_even(8))</textarea>

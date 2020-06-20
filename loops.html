@@ -44,7 +44,7 @@
     An example is shown below:
 </p>
 <form>
-<textarea id="code1">def first_x_numbers(x):
+<textarea rows=5 id="code1">def first_x_numbers(x):
     # this function prints the first x nonnegative numbers
     for i in range(x):
         print(i)
@@ -56,7 +56,7 @@ first_x_numbers(10)</textarea>
     We need to specify y as another argument of the for loop.
 </p>
 <form>
-<textarea id="code2">def first_x_numbers(x, y):
+<textarea rows=5 id="code2">def first_x_numbers(x, y):
     # this function prints the nonnegative numbers between x and y
     for i in range(x, y):
         print(i)
@@ -73,7 +73,7 @@ first_x_numbers(3, 10)</textarea>
     We add yet another argument:
 </p>
 <form>
-<textarea id="code3">def first_x_numbers(x, y, z):
+<textarea rows=6 id="code3">def first_x_numbers(x, y, z):
     # this function prints the nonnegative numbers between x and y 
     # and skipping every z numbers
     for i in range(x, y, z):
@@ -100,7 +100,7 @@ first_x_numbers(3, 10, 2)</textarea>
     Well, we want every zth number in descending order: hence, we should step by -z.
 </p>
 <form>
-<textarea id="code4">def reverse_x_numbers(x, y, z):
+<textarea rows=6 id="code4">def reverse_x_numbers(x, y, z):
     # this function prints the nonnegative numbers between x and y 
     # and skipping every z numbers, in descending order
     for i in range(y-1, x-1, -z):
@@ -112,7 +112,7 @@ reverse_x_numbers(3, 10, 2)</textarea>
 <p>Let's do one more example: determining whether or not a given number <code>n</code> is a prime number.
     To do so, we want to check every number between 2 and <code>n</code> to see if the number can fully divide <code>n</code>.</p>
 <form>
-<textarea id="code5">def is_prime(n): # returns whether or not n is a prime number
+<textarea rows=10 id="code5">def is_prime(n): # returns whether or not n is a prime number
     if n < 2:
         return True
     for factor in range(2, n):
@@ -134,7 +134,7 @@ for i in range(10):
 </p>
 <p>Let's try and create a 2D-shape with nested for loops: </p>
 <form>
-<textarea id="code6">def rectangle(height, width, char):
+<textarea rows=9 id="code6">def rectangle(height, width, char):
     # draw a rectangle with the char symbol having specified height and width
     figure = ""
     for row in range(height):
@@ -150,7 +150,7 @@ print(rectangle(3, 5, "0"))</textarea>
     the hypotenuse going from the upper right corner down to the bottom left corner.
 </p>
 <form>
-<textarea id="code7">def triangle(height, char):
+<textarea rows=9 id="code7">def triangle(height, char):
     figure = ""
     for row in range(height):
         for col in range(row + 1): # add 1 because we want to start with 1 char
@@ -163,7 +163,7 @@ print(triangle(3, "*"))</textarea>
 <pre id="output7"></pre>
 </form>
 <p>Some of you might be confused by this. 
-    Note that <code>row</code>>, like <code>i</code> that you've seen in other loops on this webpage, 
+    Note that <code>row</code>, like <code>i</code> that you've seen in other loops on this webpage, 
     are actually variables! That means you can use them in other parts of the function. 
     Hence, when <code>row</code> increases with each iteration, more columns of stars are printed out!
 </p>
@@ -177,7 +177,7 @@ print(triangle(3, "*"))</textarea>
     For this, we can use the isPrime(n) function we wrote before.
 </p>
 <form>
-<textarea id="code8">def is_prime(n): # returns whether or not n is a prime number
+<textarea rows=17 id="code8">def is_prime(n): # returns whether or not n is a prime number
     if n < 2:
         return True
     for factor in range(2, n):

@@ -117,25 +117,39 @@
 <span class="image main"><img src="images/mathismath.jpg" alt="" /></span>
 <p>Arithmetic in Python is relatively straightforward, and adheres to most of 
 	the rules we're familiar with--for example, we can't divide anything by 0, 
-	and Python handles this by crashing. 
+	and Python crashes if you attempt to divide by 0. 
 	However, Python does introduce three operator representations 
 	you probably aren't familiar with. 
 </p>
-<p>First off is integer division, represented by the "//" symbol. 
-	Think about dividing with remainders--for instance, 17 divided by 15 can be 
-	represented as 1 with a remainder of 2. Integer division keeps only the 
-	non-remainder portion when dividing.
+<h3>1. Integer Division (//)</h3>
+<p>First off is integer division, represented by the "//" symbol. Integer Division
+	<b>rounds down</b>, which means that when you get a floating point number (decimal) after 
+	division, it would round down to the nearest whole number.</p>
+<p>
+	For <b>positive values only</b>, you can think of integer divide as removing the decimals after division. So when you do division you have the result and the remainder. Integer Divide is the result.
+	However for <b>negative</b> values, think about it as first doing a normal division to get a float, then <b>round down</b> to the nearest whole number
 </p>
+	
+<p>
+	Also, Integer division can be used for floating points too!
+</p>
+
+<form>
+<textarea rows=3 id="intdiv">print(23 // 10) # evaluates to 2
+print(2.3 // 2) #evaluates to 1
+print(-23 // 10) #evaluates to -3</textarea>
+<button onclick="runboi('intdiv', 'outintdiv')" type="button">Run</button>
+</form>
+<pre id="outintdiv"></pre>
+
+<h3>2. Modulus (%)</h3>
 <p>On the other hand, the modulus operator "%" returns only the remainder portion.</p>
 <p>Lastly, "to the power of" is represented with "**". For instance, 
 	2**2 is equivalent to 2 to the power of 2, i.e. 4.
 </p>
-<p>Some examples:</p>
 
 <form>
-<textarea id="code1">print(23 // 10) # evaluates to 2
-print(23 % 10)  # evaluates to 3
-print(3 ** 2)   # evaluates to 9</textarea>
+<textarea rows=1 id="code1">print(3 ** 2)   # evaluates to 9</textarea>
 <button onclick="runboi('code1', 'output1')" type="button">Run</button>
 </form>
 <pre id="output1"></pre>
@@ -149,7 +163,7 @@ print(3 ** 2)   # evaluates to 9</textarea>
 </p>
 
 <form>
-<textarea id="code2">print(3 + 4*5) 			# evaluates to 23, not 60
+<textarea rows=7 id="code2">print(3 + 4*5) 			# evaluates to 23, not 60
 						# unsurprisingly, *, /, //, and % have higher precedence than + or -, and will be run first
 print((3 + 4) * 5) 			# now this evaluates to 60--what's in brackets will be run first
 print(3 ** 4 / 2) 			# the "**" operator has the highest precedence and will always be handled first
@@ -172,7 +186,7 @@ print(4 ** 3 ** 2)			# evaluates to 262144, not 4096. "**" is a special case tha
 </p>
 <p>Let's try an example:</p>
 <form>
-<textarea id="code3">print(float(10 / float(3)))
+<textarea rows=6 id="code3">print(float(10 / float(3)))
 # at first glance everything seems alright--10/3 is equal to 3.3333 after all
 print(float(10 / 3) == 3)
 # but now we see that 10/3 is equal to 3!
@@ -193,7 +207,7 @@ print(float(10 / 3) == 3)
 </p>
 
 <form>
-<textarea id="code4">def yea(): return True
+<textarea rows=7 id="code4">def yea(): return True
 def nah(): return False
 def crash(): return 1/0  # this crashes
 print(nah() and crash())  # prints False without even looking at crash()

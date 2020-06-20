@@ -34,8 +34,6 @@
 										<h1>Strings</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-
 									<p>A <b>String</b> is one of the datatypes introduced in the chapter <b>Datatypes</b>. In this chapter, we will expand on that, introducing further <u>operations</u>, and <u>built-in methods</u> for Strings</p>
 									<p>
 										A string is an iterable object, meaning that you can use <b>Loops</b> on it (other iterable objects include tuple, list, dictionary etc). 
@@ -47,8 +45,10 @@
 									
 									<p>To create a string in Python, we use either 'single' or "double" quotes. </p>
 
+
 <form>
-<textarea id="code1">print('single')
+<body onload="init();">
+<textarea rows=16 id="code1">print('single')
 print("double")
 
 print('''This is a string
@@ -66,13 +66,14 @@ quotes
 """)</textarea>
 <button onclick="runboi('code1', 'output1')" type="button">Run</button>
 <pre id="output1"></pre>
+</body>
 </form>
 
 <p>
 	So why do we want both single and double quotes? It allows us to use quotes within a string as in the following:
 </p>
 <form>
-<textarea id="code2"># this will successfully print: This is a string with "quotes" inside
+<textarea rows=5 id="code2"># this will successfully print: This is a string with "quotes" inside
 print('This is a string with "quotes" inside')
 # the following code would give an error, because the string would be seperated into
 # "This is a string with " and " inside", with the word quotes not being a string.
@@ -92,7 +93,7 @@ print('This is a string with "quotes" inside')
 	Remember, even though "\n" is typed with two characters, it is recognized by python as one character.
 </p>
 <form>
-<textarea id="code3"># You can use newline in single-line strings.
+<textarea rows=16 id="code3"># You can use newline in single-line strings.
 print("This is the first line.\nThis is the second line.")
 
 # Using multi-line strings automatically adds newlines for you
@@ -114,7 +115,7 @@ len("ab\ncd") == 5</textarea>
 
 <p>Other useful escape sequences include</p>
 <form>
-<textarea id="code4">print("There would be a tab here: \tAfter the tab")
+<textarea rows=12 id="code4">print("There would be a tab here: \tAfter the tab")
 
 # You can also escape a backslash itself
 # This will print: This allows a backslash (\) to be printed
@@ -136,7 +137,7 @@ print("This is a string with \"quotes\" inside")</textarea>
 <h3>Addition and Multiplication</h3>
 <p>You can use addition to concatenate two strings together. You can also use multiplication to get multiple copies of the same string</p>
 <form>
-<textarea id="code4.5">#the following prints: string 1 and string 2
+<textarea rows=5 id="code4.5">#the following prints: string 1 and string 2
 print("string 1" + " and " + "string 2")
 
 #this prints: hahahahaha
@@ -148,7 +149,7 @@ print("ha" * 5)</textarea>
 <h3>in Operation</h3>
 <p>The in operation lets you check if a string is in another string. Using the operation on two strings would return a boolean value True/False.</p>
 <form>
-<textarea id="code13">#evaluates to True
+<textarea rows=5 id="code13">#evaluates to True
 print("hi" in "hiya")
 
 #evaluates to False
@@ -160,7 +161,7 @@ print("bye" in "hi")</textarea>
 <h3>Indexing and Slicing</h3>
 <p>Indexing allows you to get a character from the string. Remember that the count for indexing starts from 0 instead of 1!</p>
 <form>
-<textarea id="code14">jerry = "Jerry\nLi"
+<textarea rows=12 id="code14">jerry = "Jerry\nLi"
 print(jerry[0])
 print(jerry[1])
 print(jerry[2])
@@ -178,7 +179,7 @@ print(jerry[8]) </textarea>
 
 <p>You can also do negative indexing, which is indexing but you start the count from the back. In this case, the count for indexing starts from -1. Why not 0? This is because we already used the index 0 for positive indexing.</p>
 <form>
-<textarea id="code15">jerry = "Jerry\nLi"
+<textarea rows=9 id="code15">jerry = "Jerry\nLi"
 print(jerry[-1])
 print(jerry[-2])
 print(jerry[-3]) # shows up as a newline \n
@@ -194,7 +195,7 @@ print(jerry[-8])</textarea>
 	This means that when getting the range of indexes, include index start but exclude index end.
 </p>
 <form>
-<textarea id="code5">jerry = "Jerry\nLi"
+<textarea rows=5 id="code5">jerry = "Jerry\nLi"
 print(jerry[0:2]) # Note that jerry[0] == "J" is included but jerry[2] == "r" is excluded
 print(jerry[:6]) # Note this includes the \n newline
 print(jerry[6:])
@@ -208,7 +209,7 @@ print(jerry[:] == "Jerry\nLi")</textarea>
 	<h3>str()</h3>
 	<p>Converts another datatype into a string</p>
 <form>
-<textarea id="code6">print(str(5) == "5")</textarea>
+<textarea rows=1 id="code6">print(str(5) == "5")</textarea>
 <button onclick="runboi('code6', 'output6')" type="button">Run</button>
 <pre id="output6"></pre>
 </form>
@@ -216,7 +217,7 @@ print(jerry[:] == "Jerry\nLi")</textarea>
 <h3>len()</h3>
 <p>Given a string, gets the length of the string</p>
 <form>
-<textarea id="code7">print(len("Jerry Li"))
+<textarea rows=4 id="code7">print(len("Jerry Li"))
 
 # Remember that \n is considered one character
 print(len("ab\ncd"))</textarea>
@@ -231,7 +232,7 @@ print(len("ab\ncd"))</textarea>
 										<p>Both chr() and ord() are operations for <u>one character</u>. chr() gives you the character from the ASCII value, while ord() gives you the ASCII value from the character</p>
 
 <form>
-<textarea id="code8">print(ord("A"))
+<textarea rows=5 id="code8">print(ord("A"))
 print(chr(65))
 
 # You can also do arithmetic on the ASCII value
@@ -242,7 +243,7 @@ print(chr(ord("A") + 2) == "C")</textarea>
 <h3>.capitalize(), .lower(), .upper()</h3>
 <p>These three operations adjusts the capitalization of the given string.</p>
 <form>
-<textarea id="code9"># This will print: Jerry
+<textarea rows=8 id="code9"># This will print: Jerry
 print("jerry".capitalize())
 
 # This prints: JERRY LI
@@ -256,8 +257,9 @@ print("jErRy Li".lower())</textarea>
 
 <h3>.isalnum(), .isalpha(), .isdigit(), .isspace()</h3>
 <p>These methods check whether the contents of the strings are characters in the alphabet ("A", "a", "b" etc.), digits ("0", "1", "2", etc.), or whitespace ("\t", "\n", " " etc.)</p>
+
 <form>
-<textarea id="code10"># .isalnum() returns True if the string has only characters in the alphabet or digits and False otherwise. 
+<textarea rows=20 id="code10"># .isalnum() returns True if the string has only characters in the alphabet or digits and False otherwise. 
 print("AABB".isalnum()) #True
 print("aaBB123".isalnum()) #True
 print("aaBB 123".isalnum()) #False, because there is a space
@@ -287,7 +289,7 @@ print("\t\t\t\t\t\n \n \n \t".isspace()) #True</textarea>
 The return value of both methods is a List of split strings, which you will learn in the next chapter.
 </p>
 <form>
-<textarea id="code11"># .split(",") would split by the comma
+<textarea rows=8 id="code11"># .split(",") would split by the comma
 print("Jerry,Li".split(",")) #prints: ["Jerry", "Li"]
 
 #.splitlines() would split by newline '\n'
@@ -303,7 +305,7 @@ print("Hi\tBye\nAnother line".split()) #prints: ["Hi", "Bye", "Another", "line"]
 <p>F strings are a very powerful new feature in Python 3. It allows for quick string formatting.</p>
 <form>
 <p>Previously, to easily insert variables' values into a string you would have to specify what the type is, as follows:</p>
-<textarea id="code12">name = "Harry Potter"
+<textarea rows=4 id="code12">name = "Harry Potter"
 book_id = 7
 #Note that %s indicates a string and %d indicates an integer
 print("The book %s has id %d" % (name, book_id)) 
@@ -312,7 +314,7 @@ print("The book %s has id %d" % (name, book_id))
 <pre id="output12"></pre>
 </form>
 <p>Now, the f-string allows us to do the previous much easier. Copy this code into VS Code and try it out!</p>
-<form><textarea>name = "Harry Potter"
+<form><textarea rows=5>name = "Harry Potter"
 book_id = 7
 # This prints: "The book Harry Potter has id 7"
 # With f-strings, you will not need to indicate which type name or book_id is.

@@ -39,7 +39,7 @@
 									<p>A variable is a named value that references or stores a piece of data.
 										Variables can be assigned by using an “=” sign, as shown below:</p>
 <form>
-<textarea id="code1">x = 5
+<textarea rows=5 id="code1">x = 5
 print(x)      # x evaluates to 5
 print(x * 2)  # evaluates to 10
 y = 5
@@ -58,7 +58,7 @@ print(y == x) # evaluates to true</textarea>
 <p>An expression is a combination of symbols that represent a value. Examples:</p>
 
 <form>
-<textarea id="code2">print(10)            		# numbers
+<textarea rows=8 id="code2">print(10)            		# numbers
 print("A")           		# characters
 print("Jesse Chan")  	# strings
 print(1 + 2)
@@ -73,7 +73,7 @@ print(25 > 3)      		# this evaluates to True, which is a Boolean</textarea>
 <p>Statements are lines of code that perform actions. Statements may be made up of expressions. Examples:</p>
 
 <form>
-<textarea id="code3">text = "Bob " + "the " + "Builder"
+<textarea rows=2 id="code3">text = "Bob " + "the " + "Builder"
 print(text) # this shows "Bob the Builder"</textarea>
 <button onclick="runboi('code3', 'output3')" type="button">Run</button>
 <pre id="output3"></pre>
@@ -83,7 +83,7 @@ print(text) # this shows "Bob the Builder"</textarea>
 <h2>Functions</h2>
 <p>A function is a named part of a program that performs some procedure. The format in which we declare functions in Python is shown below.</p>
 <form>
-<textarea id="code4">def function_name(parameters): # this is the header
+<textarea rows=2 id="code4">def function_name(parameters): # this is the header
 	# this is where my body would go...if I had one</textarea>
 </form>
 
@@ -100,7 +100,7 @@ print(text) # this shows "Bob the Builder"</textarea>
 	An example of a function that multiples two numbers:</p>
 
 <form>
-<textarea id="code5">def multiply(x, y):   # declare a function using "def". This function's name
+<textarea rows=4 id="code5">def multiply(x, y):   # declare a function using "def". This function's name
 	# is "multiply", and it takes in two parameters, x and y
 	return x * y  # this function multiplies x and y
 print(multiply(2, 3)) # this shows 2*3, which is 6</textarea>
@@ -114,7 +114,7 @@ print(multiply(2, 3)) # this shows 2*3, which is 6</textarea>
 </p>
 
 <form>
-<textarea id="code6">def add(x, y):
+<textarea rows=5 id="code6">def add(x, y):
 	print(x + y)     # this function prints the sum of x and y, but doesn't return anything
 add(3, 7) 		# we see that "10" gets printed to the console
 print(add(3, 7)) 	# again, "10" is printed, but so is "None"! That's because we're not returning anything,
@@ -130,7 +130,7 @@ print(add(3, 7)) 	# again, "10" is printed, but so is "None"! That's because we'
 <p>Variables are defined within a specific scope--this means that they can't be used everywhere in your code, but only where you define them.</p>
 <p>A local variable is one that is defined inside a function, and hence only exist inside that function. An example:</p>
 <form>
-<textarea id="code7">def wow():
+<textarea rows=8 id="code7">def wow():
 	x = 5
 	y = 3
 	return x + y
@@ -146,7 +146,7 @@ print(y)</textarea>
 	it would "pollute the global namespace", making it difficult to keep track of the scope of variables.
 </p>
 <form>
-<textarea id="code8">z = 1 				# global variable
+<textarea rows=8 id="code8">z = 1 				# global variable
 def wow():
 	x = 5 			# local variable
 	y = 3 			# local variable
@@ -164,7 +164,7 @@ print(z) </textarea>
 	These are typically called helper functions, and are quite nice in implementing more advanced algorithms.
 </p>
 <form>
-<textarea id="code9">def add(x, y):
+<textarea rows=7 id="code9">def add(x, y):
 	return x + y
 def multiply(x, y):
 	return x * y
