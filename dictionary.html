@@ -45,7 +45,8 @@
 	cannot be indexed into because they have no particular order. 
 	Sets can be iterated over, however.
 </p>
-<pre><code>empty_set = set()
+<form>
+	<textarea rows=13 id="code1">empty_set = set()
 print(empty_set)                     # a set with nothing in it is an empty set
 static_set = {"pepe", "the", "frog"} # we can allocate a set statically like this...
 S = set([1, 2, 3, 4, 5, 1, 1, 3])    # or create it from a list
@@ -57,8 +58,11 @@ S.remove(3)                          # this removes 3 from the set
 print(8 in S)                        # True
 print(3 in S)                        # False
 for item in S:
-	print(item)
-</code></pre>
+	print(item)</textarea>
+<button onclick="runboi('code1', 'out1')" type="button">Run</button>
+</form>
+<pre id="out1"></pre>
+
 <p>Note that elements of sets are unique--even though we had three 1's in the original list 
 	in the example above, the set only contains one.
 </p>
@@ -66,10 +70,15 @@ for item in S:
 	For instance, numbers, booleans, strings, and tuples are all immutable. 
 	Lists are mutable--remember that we can add, remove, or change elements in it.
 </p>
-<pre><code>S = set([1, 2, 3])      # this is fine since the set contains 
-		        # the elements of the list, not the actual list itself
-S = set([[1, 2, 3], 4]) # this is not fine because the list [1, 2, 3] is mutable
-</code></pre>
+
+<form>
+		<textarea rows=3 id="code2">S = set([1, 2, 3])      # this is fine since the set contains 
+			# the elements of the list, not the actual list itself
+S = set([[1, 2, 3], 4]) # this is not fine because the list [1, 2, 3] is mutable</textarea>
+<button onclick="runboi('code2', 'out2')" type="button">Run</button>
+</form>
+<pre id="out2"></pre>
+
 <p>Again, sets are very useful because they run fast. 
 	It takes much less time to determine if an element is in a set as compared to a list. 
 </p>
@@ -77,15 +86,22 @@ S = set([[1, 2, 3], 4]) # this is not fine because the list [1, 2, 3] is mutable
 	We could loop through and record all elements that have already occurred, 
 	and if an element has occurred, we can add it to a new set.
 </p>
-<pre><code>def repeats(L):
-    seen = set()
-    seenAgain = set()
-    for element in L:
-        if (element in seen):
-            seenAgain.add(element)
-        seen.add(element)
+
+<form>
+<textarea rows=9 id="code3">def repeats(L):
+	seen = set()
+	seenAgain = set()
+	for element in L:
+		if (element in seen):
+			seenAgain.add(element)
+		seen.add(element)
 	return sorted(seenAgain) # sorts results
-print(repeats([1,1,1,3,4,6,2,4,1,5]))
+print(repeats([1,1,1,3,4,6,2,4,1,5]))</textarea>
+<button onclick="runboi('code3', 'out3')" type="button">Run</button>
+</form>
+<pre id="out3"></pre>
+
+<pre><code>
 </code></pre>
 
 <hr class="major" />
@@ -97,7 +113,9 @@ print(repeats([1,1,1,3,4,6,2,4,1,5]))
 </p>
 <p>For instance, we can create a dictionary of political connections. 
 </p>
-<pre><code># two ways to create an empty dictionary
+
+<form>
+<textarea rows=13 id="code4"># two ways to create an empty dictionary
 D = dict()
 D = {} 
 # two ways to initialize dictionaries with set values
@@ -109,14 +127,19 @@ print("Merkel" in D)                             # True
 del D["Merkel"]                                  # deletes key if it exists; crashes otherwise
 print("Merkel" in D)                             # False
 for key in D:
-	print(key, D[key])
-</code></pre>
+	print(key, D[key])</textarea>
+<button onclick="runboi('code4', 'out4')" type="button">Run</button>
+</form>
+<pre id="out4"></pre>
+		
 <p>Suppose now we want to create a dictionary of connections of connections. 
 	For example, Trump is connected with Trudeau and Putin, who are connected 
 	with Merkel, Xi, and Trump. We want a new dictionary where the key of Trump 
 	maps to a set containing Merkel and Xi.
 </p>
-<pre><code>D = dict()
+
+<form>
+<textarea rows=19 id="code5">D = dict()
 D["Trump"] = set(["Trudeau", "Putin"])
 D["Putin"] = set(["Trump", "Merkel", "Xi"])
 D["Trudeau"] = set(["Trump"])
@@ -135,13 +158,19 @@ def connections(D): 				# returns dictionary of connections of connections
 		if key in res: res.remove(key)  # the current person cannot be his/her connection of a connection
 		result[key] = res
 	return result
-print(connections(D))
-</code></pre>
+print(connections(D))</textarea>
+<button onclick="runboi('code5', 'out5')" type="button">Run</button>
+</form>
+<pre id="out5"></pre>
+
+
 <p>Since the values in dictionaries are mutable, we can also directly modify them. 
 	Let's say we have a list of people and want to make a dictionary mapping their names 
 	to the number of times they show up in the list:
 </p>
-<pre><code>def appearances(L):
+
+<form>
+<textarea rows=10 id="code6">def appearances(L):
 	D = dict()
 	for name in L:
 		if name in D:
@@ -150,8 +179,11 @@ print(connections(D))
 			D[name] = 1  # otherwise, this is our first time seeing their name, so we set the value to 1
 	return D
 L = ["Trump", "Trudeau", "Merkel", "Merkel", "Trump", "Trump"]
-print(appearances(L))
-</code></pre>
+print(appearances(L))</textarea>
+<button onclick="runboi('code6', 'out6')" type="button">Run</button>
+</form>
+<pre id="out6"></pre>
+
 								</section>
 
 						</div>
