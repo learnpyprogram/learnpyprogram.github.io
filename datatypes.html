@@ -136,7 +136,7 @@
 
 <form>
 <textarea rows=3 id="intdiv">print(23 // 10) # evaluates to 2
-print(2.3 // 2) #evaluates to 1
+print(2.3 // 2) #evaluates to 1.0
 print(-23 // 10) #evaluates to -3</textarea>
 <button onclick="runboi('intdiv', 'outintdiv')" type="button">Run</button>
 </form>
@@ -178,7 +178,7 @@ print(-10 % 3) #Evaluates to -10 - (3 * -4) => -10 - (-12) => 2</textarea>
 <form>
 <textarea rows=7 id="code2">print(3 + 4*5) 			# evaluates to 23, not 60
 						# unsurprisingly, *, /, //, and % have higher precedence than + or -, and will be run first
-print((3 + 4) * 5) 			# now this evaluates to 60--what's in brackets will be run first
+print((3 + 4) * 5) 			# now this evaluates to 35--what's in brackets will be run first
 print(3 ** 4 / 2) 			# the "**" operator has the highest precedence and will always be handled first
 print(5 - 4 - 1) 			# evaluates to 0, not 2, because we run from left-to-right
 print(5 - (4 - 1))			# now this evaluates to 2
