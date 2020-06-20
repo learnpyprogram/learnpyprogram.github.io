@@ -143,7 +143,20 @@ print(-23 // 10) #evaluates to -3</textarea>
 <pre id="outintdiv"></pre>
 
 <h3>2. Modulus (%)</h3>
-<p>On the other hand, the modulus operator "%" returns only the remainder portion.</p>
+<p>For <b>positive</b> numbers, modulus returns the remainder of division. For both <b>positive and negative</b> numbers
+you can think of modulus as <b>finding a multiple of the second argument that is immediately less than the first</b>, then get the difference 
+between the two</p>
+
+<form>
+<textarea rows=3 id="mod">print(10 % 3) #Evaluates to 10 - (3 * 3) => 10 - 9 => 1
+#Note how -12 is the largest multiple of 3 that is less than -10
+print(-10 % 3) #Evaluates to -10 - (3 * -4) => -10 - (-12) => 2</textarea>
+<button onclick="runboi('mod', 'outmod')" type="button">Run</button>
+</form>
+<pre id="outmod"></pre>
+
+		
+<h3>3. Power (**)</h3>
 <p>Lastly, "to the power of" is represented with "**". For instance, 
 	2**2 is equivalent to 2 to the power of 2, i.e. 4.
 </p>
