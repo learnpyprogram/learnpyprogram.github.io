@@ -33,20 +33,20 @@
 									<header class="main">
 										<h1>Object Oriented Programming</h1>
 									</header>
-<p>In programming, an object is a data structure that has user-defined properties and methods associated with it. 
+<p>In programming, an object is a data structure that has user-defined attributes and methods associated with it. 
 	Objects are very useful in programming because they allow us to store lots of information and run specific functions according to object-oriented programming--
-	for instance, we can create a Dog object with properties like name and age and run functions like do_a_trick.
+	for instance, we can create a Dog object with attributes like name and age and run functions like do_a_trick.
 </p>
 									<hr class="major" />
 
-									<h2>Methods and Properties</h2>
-									<p>Methods are like functions for classes, while properties are variables for classes. Lets take a look at how these appear in a class:</p>
+									<h2>Methods and Attributes (Properties)</h2>
+									<p>Methods are like functions for classes, while attributes are variables for classes. Lets take a look at how these appear in a class:</p>
 <form>
 <textarea rows=12 id="code1">class Dog(object):
 	#__init__ is a special method, you may see other special methods with underscores
 	def __init__(self, color, age):
 
-		# properties can be used throughout the class with the tag self
+		# attributes can be used throughout the class with the tag self
 		self.color = color # self.color is an attribute
 		self.age = age # self.age is also an attribute
 		self.cuteness = 100 # this is also an attribute
@@ -57,8 +57,8 @@
 <button onclick="runboi('code1', 'output1')" type="button">Run</button>
 <pre id="output1"></pre>
 </form>
-<p>In the Dog object above the properties are <code>self.color</code>, <code>self.age</code>, and <code>self.cuteness</code>. 
-Note the difference between properties and variables--properties are a type of variable that can only be referenced with respect to an object.
+<p>In the Dog object above the attributes are <code>self.color</code>, <code>self.age</code>, and <code>self.cuteness</code>. 
+Note the difference between attributes and variables--attributes are a type of variable that can only be referenced with respect to an object.
 </p>
 <p>So how do we use an object? It's actually fairly simple:</p>
 <form>
@@ -83,20 +83,54 @@ print(type(Spots) == Dog)</textarea>
 </form>
 <p>When we create Spots above, Spots is a variable that belongs to the Dog class! 
 	This means Spots is an <b>instance</b> of that class--we can actually see this in the last line of code, where <code>type(Spots)</code> returns Dog! 
-	You'll see that you can access the properties of the Spots instance by typing its name, a period, and what attribute you want to access (for example, <code>Spots.age</code>).</p>
+	You'll see that you can access the attributes of the Spots instance by typing its name, a period, and what attribute you want to access (for example, <code>Spots.age</code>).</p>
 <p>Similarly, if we want to use a method (fuction) of an object, we type the instance's name (Spots), a period, the function name, brackets, and whatever <code>arguments</code> that method needs. 
 Here, when we call <code>Spots.birthday()</code>, we run the birthday function, which increases Spots' age by 1. 
 Since this directly updates the value of the age attribute, the next time we use Spots.age, it'll be 4!</p>
 <p>Note that the argument <code>self</code> is <b>only</b> used inside the code for the Dog object, and not for any instances. 
 What this means is when you create Spots, you don't need to enter anything in the brackets for <code>self</code>--as seen on line 10 in the code above, we only need to set Spots' age and color. 
-Note also that we don't necessarily need all properties to come from arguments! <code>self.cuteness</code> is set to 100 and doesn't rely on any arguments.</p>
-
+Note also that we don't necessarily need all attributes to come from arguments! <code>self.cuteness</code> is set to 100 and doesn't rely on any arguments.</p>
 <hr class="major" />
+<h2>__eq__ Special Method</h2>
+<p>__eq__ is a special method that you can add to a class, which would allow you to compare two objects using "==". 
+	For example, we can change the above code to include a special method for equality.
+</p>
+<form>
+		<textarea rows=20 id="code7">class Dog(object):
+			def __init__(self, color, age):
+				self.color = color
+				self.age = age 
+				self.cuteness = 100 
+			
+			def birthday(self):
+				self.age += 1
+			
+			def __eq__(self, other):
+				return (isinstance(other, Dog) and self.color == other.color and
+					self.age == other.age and self.cuteness == other.cuteness)
+		
+		Spots = Dog("brown", 3)
+		print("Spots' color is " + Spots.color)
+		print("Spots' cuteness is " + str(Spots.cuteness))
+		print("Spots' age is " + str(Spots.age))
+		Spots.birthday()
+		print("After celebrating his birthday, Spots is now %d years old!" %Spots.age)	
+		print(type(Spots) == Dog)</textarea>
+		<button onclick="runboi('code7', 'output7')" type="button">Run</button>
+		<pre id="output7"></pre>
+		</form>
+<p>
+	Note that the above __eq__(self, other) takes in two arguments, self and other. You can think of self and other to be the two things you
+	are comparing with "==". You want to define how self == other. First we want to make sure other is also an instance of Dog, and therefore we do
+	isinstance(other, Dog). Then we define the equality of the two objects by the equality of their attributes. To access an attribute of the self object, we do self.color, and similarly for other.
+</p>
+<hr class="major" />
+
 <h2>Inheritance</h2>
 <p>Now that we know how to create a Dog, our next step might be to create specific types of Dogs. 
 	For example, we can create golden retrievers, border collies, and, God rest their demonic souls, chihuahuas. 
 	Obviously, each of these breeds are all dogs--so instead of creating an entirely new object for each of them, we can actually make them <b>subclasses</b> of the Dog object. 
-	In the following example, we'll be creating a racing_dog that inherits the Dog object's properties and adds a property for speed; it will also be able to race in addition to having birthdays. 
+	In the following example, we'll be creating a racing_dog that inherits the Dog object's attributes and adds a property for speed; it will also be able to race in addition to having birthdays. 
 	Lastly, when a racing_dog has a birthday, the Racing Committee will give it a special birthday congratulation, so we want to <b>add</b> to the existing birthday function.
 </p>
 <pre><code>class Dog(object):
