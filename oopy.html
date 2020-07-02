@@ -97,25 +97,22 @@ Note also that we don't necessarily need all attributes to come from arguments! 
 </p>
 <form>
 		<textarea rows=20 id="code7">class Dog(object):
-			def __init__(self, color, age):
-				self.color = color
-				self.age = age 
-				self.cuteness = 100 
-			
-			def birthday(self):
-				self.age += 1
-			
-			def __eq__(self, other):
-				return (isinstance(other, Dog) and self.color == other.color and
-					self.age == other.age and self.cuteness == other.cuteness)
-		
-		Spots = Dog("brown", 3)
-		print("Spots' color is " + Spots.color)
-		print("Spots' cuteness is " + str(Spots.cuteness))
-		print("Spots' age is " + str(Spots.age))
-		Spots.birthday()
-		print("After celebrating his birthday, Spots is now %d years old!" %Spots.age)	
-		print(type(Spots) == Dog)</textarea>
+	def __init__(self, color, age):
+		self.color = color
+		self.age = age 
+		self.cuteness = 100 
+	
+	def birthday(self):
+		self.age += 1
+	
+	def __eq__(self, other):
+		return (isinstance(other, Dog) and self.color == other.color and
+			self.age == other.age and self.cuteness == other.cuteness)
+
+Spots = Dog("brown", 3)
+Spots_2 = Dog("brown", 3)
+#Now we can do this, because of the __eq__ special method
+print(Spots == Spots_2)</textarea>
 		<button onclick="runboi('code7', 'output7')" type="button">Run</button>
 		<pre id="output7"></pre>
 		</form>
